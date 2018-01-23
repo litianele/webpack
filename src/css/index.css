@@ -1,0 +1,10 @@
+body {
+  background: #ddd;
+  color: #f00;
+}
+
+#tupian{
+  background: url(../images/logo.png) no-repeat center;
+  width:466px;
+  height:453px;
+}
