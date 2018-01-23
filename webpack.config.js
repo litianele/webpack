@@ -42,7 +42,32 @@ module.exports = {
       {
         test: /\.(htm|html)$/i,
         use:[ 'html-withimg-loader']
+      },
+      //分离
+      {
+        test: /\.less$/,
+        use: extractTextPlugin.extract({
+          use: [{
+            loader: "css-loader"
+          }, {
+            loader: "less-loader"
+          }],
+          // use style-loader in development
+          fallback: "style-loader"
+        })
       }
+      // {
+      //   test: /\.less$/,
+      //   use: [{
+      //     loader: "style-loader" // creates style nodes from JS strings
+      //   },
+      //   {
+      //     loader: "css-loader" // translates CSS into CommonJS
+      //   },
+      //   {
+      //     loader: "less-loader" // compiles Less to CSS
+      //   }]
+      // }
     ]
   },
   //插件，用于生产模版和各项功能
